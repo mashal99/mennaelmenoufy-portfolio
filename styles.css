@@ -467,6 +467,25 @@ img {
   line-height: 1.6;
 }
 
+.projects__priority {
+  margin: -0.6rem auto 1.8rem;
+  max-width: 36rem;
+  text-align: center;
+}
+
+.projects__priority p {
+  margin: 0.28rem 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  text-transform: uppercase;
+}
+
+.projects__priority strong {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -502,6 +521,14 @@ img {
   background: var(--color-bg-elevated);
   box-shadow: 0 20px 50px rgba(28, 24, 20, 0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.project-tile[data-project="apple"] {
+  order: -20;
+}
+
+.project-tile[data-project="mountainReception"] {
+  order: -10;
 }
 
 .project-tile:hover {

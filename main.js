@@ -86,8 +86,19 @@ const PROJECTS = {
     ],
   },
   apple: {
-    title: "Apple Store",
-    subtitle: "Retail booth · 3D visualization, plans, and zoning",
+    title: "Apple Retail Concept (Personal Project)",
+    subtitle:
+      "Project Scope: High-fidelity 6x6 modular exhibition stand designed for rapid assembly and high-traffic retail engagement.",
+    slideCaptions: [
+      "Premium high-gloss PU paint with integrated tech hardware.",
+      "CNC-milled MDF panels with 3D backlit acrylic branding.",
+      "6000K recessed LED profiles + Tension fabric (SEG) lightboxes.",
+      "Defined VR experience zone, VIP lounge, and product display.",
+      "Spatial zoning optimized for visitor flow and dwell time.",
+      "Modular display unit positioning and hardware clearance.",
+      "10cm raised flooring for concealed cable management.",
+      "Cam-lock modularity optimized for 5-ton truck transport.",
+    ],
     slides: [
       "img_p002_001.jpeg",
       "img_p002_002.jpeg",
@@ -111,7 +122,7 @@ const PROJECTS = {
     ],
   },
   amazon: {
-    title: "Amazon",
+    title: "Amazon Office Concept (Personal Project)",
     subtitle:
       "Corporate office · Interiors, workstations, and technical drawings",
     slides: [
@@ -139,8 +150,8 @@ const PROJECTS = {
     ],
   },
   nbe: {
-    title: "National Bank of Egypt",
-    subtitle: "Flagship interiors · Renders, plans, and building sections",
+    title: "National Bank of Egypt Concept (Personal Project)",
+    subtitle: "Conceptual flagship banking interior · Renders, plans, and sections",
     slides: [
       "img_p009_024.jpeg",
       "img_p009_025.png",
@@ -203,8 +214,13 @@ if (header && hero && "IntersectionObserver" in window) {
     if (!p) return;
     const slides = p.slides;
     const base = p.imgBase || IMG_BASE;
+    const slideCaption =
+      Array.isArray(p.slideCaptions) && p.slideCaptions[index]
+        ? p.slideCaptions[index]
+        : p.subtitle;
     imgEl.src = base + slides[index];
     imgEl.alt = `${p.title} — slide ${index + 1} of ${slides.length}`;
+    subEl.textContent = slideCaption;
     counterEl.textContent = `${index + 1} / ${slides.length}`;
     prevBtn.disabled = index <= 0;
     nextBtn.disabled = index >= slides.length - 1;
@@ -238,7 +254,6 @@ if (header && hero && "IntersectionObserver" in window) {
     projectKey = key;
     index = 0;
     titleEl.textContent = p.title;
-    subEl.textContent = p.subtitle;
     buildDots(p.slides.length);
     root.hidden = false;
     document.body.classList.add("is-lightbox-open");
