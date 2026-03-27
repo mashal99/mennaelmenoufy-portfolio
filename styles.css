@@ -839,6 +839,10 @@ img {
   color: var(--color-muted);
 }
 
+.contact__resume {
+  margin: 0.9rem 0 0;
+}
+
 .site-footer {
   padding: 2rem clamp(1.25rem, 5vw, 2.5rem) 3rem;
   text-align: center;
