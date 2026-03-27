@@ -201,7 +201,8 @@ img {
 
 .intro {
   text-align: center;
-  padding: clamp(4rem, 11vw, 7rem) clamp(1.25rem, 5vw, 2.5rem);
+  padding: clamp(4rem, 11vw, 7rem) clamp(1.25rem, 5vw, 2.5rem)
+    clamp(2.25rem, 6.5vw, 3.75rem);
   background: var(--color-bg-elevated);
 }
 
